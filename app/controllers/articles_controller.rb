@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      flash[:notice] = 'Player successfully created!'
+      flash[:notice] = 'Article successfully created!'
       redirect_to root_path
     else
       flash.now[:alert] = @article.errors.full_messages.join(', ')
