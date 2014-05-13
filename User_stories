@@ -1,0 +1,4 @@
+Setup, Exercise, Verify
+
+'When user goes to the front page user wants to see a list of all articles'
+'When user clicks the New Article link on the front page and enters/submits attributes on a form user should see New Article and success message.'
