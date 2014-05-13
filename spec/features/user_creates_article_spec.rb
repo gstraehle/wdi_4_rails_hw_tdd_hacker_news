@@ -26,6 +26,8 @@ feature 'User creates article' do
 
     visit root_path
     click_link 'New Article'
+    fill_in 'Title', with: 'Title1'
+    fill_in 'Url', with: 'www.url1.com'
     click_button 'Create Article'
 
     expect(page).to have_content "Url is invalid"
