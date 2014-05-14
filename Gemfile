@@ -21,7 +21,6 @@ gem 'spring', group: :development
 gem 'devise'
 
 group :development, :test do
-  gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'pry-nav'
   gem 'pry-stack_explorer'
@@ -30,6 +29,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'factory_girl_rails'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'

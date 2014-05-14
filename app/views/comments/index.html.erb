@@ -10,7 +10,7 @@
   </tr>
   <% @comments.each do |comment| %>
     <tr>
-      <td><%= comment.message %></td>
+      <td><%= comment.message %>, <%= comment.created_at.asctime %></td>
     </tr>
   <% end %>
 </table>
