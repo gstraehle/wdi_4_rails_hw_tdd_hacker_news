@@ -2,13 +2,11 @@
 <%= link_to 'New Article', new_article_path %>
 <table>
   <tr>
-    <th>Title</th>
-    <th>URL</th>
+    <th>Linked Title</th>
   </tr>
   <% @articles.each do |article| %>
     <tr>
-      <td><%= article.title %></td>
-      <td><%= article.url %></td>
+      <td><%= link_to article.title, article.url  %></td>
     </tr>
   <% end %>
 </table>
