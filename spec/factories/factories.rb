@@ -4,3 +4,10 @@ FactoryGirl.define do
     url { Faker::Internet.url }
   end
 end
+
+
+FactoryGirl.define do
+  factory :comment do
+    message { Faker::Lorem.sentence }
+  end
+end

@@ -10,7 +10,7 @@ feature 'User creates article' do
 
     expect(page).to have_content 'Article successfully created'
     expect(page).to have_content 'Title1'
-    expect(page).to have_content 'http://url1.com'
+    expect(page).to have_css 'a', 'http://url1.com'
   end
 
   scenario 'unsuccessfully due to required fields being blank' do

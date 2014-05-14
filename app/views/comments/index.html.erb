@@ -1,0 +1,16 @@
+<h1>All Comments</h1>
+
+
+<%= link_to 'Home', root_path %>
+
+
+<table>
+  <tr>
+    <th>Comments</th>
+  </tr>
+  <% @comments.each do |comment| %>
+    <tr>
+      <td><%= comment.message %></td>
+    </tr>
+  <% end %>
+</table>
