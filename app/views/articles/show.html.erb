@@ -1,0 +1,17 @@
+<h1><%= @article.title %> </h1>
+<h2><%= link_to 'Home', root_path %></h2>
+
+
+<%= form_for [@article, @comment] do |f| %>
+  <%= f.label "Comment" %>
+  <%= f.text_area :message %>
+  <%= f.submit %>
+<% end %>
+
+<div class="comments">
+<% @article.comments.each do |comment| %>
+  <div class="comment">
+    <div class="message"><span class="created_at"> <%= comment.created_at %> </span><%= comment.message %></div>
+  </div>
+<% end %>
+</div>

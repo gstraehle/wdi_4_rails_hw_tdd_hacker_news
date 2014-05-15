@@ -1,18 +1,12 @@
 class CommentsController < ApplicationController
-  def index
-    @articles = Article.all.order(:title).order(created_at: :desc)
-    @comments = Comment.all.order(:article_id).order(created_at: :desc)
 
-  end
-  def new
-    @comment = Comment.new
-  end
   def create
-    @comment = Comment.new(comment_params)
+    @article = Article.find(params[:article_id])
+    @comment = @article.comments.new(comment_params)
 
     if @comment.save
       flash[:notice] = 'Comment successfully created!'
-      redirect_to root_path
+      redirect_to @article
     else
       flash.now[:alert] = @comment.errors.full_messages.join(', ')
       render :new

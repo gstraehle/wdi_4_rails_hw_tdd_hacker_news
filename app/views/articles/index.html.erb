@@ -1,6 +1,5 @@
 <h1>All Articles</h1>
 <%= link_to 'New Article', new_article_path %>
-<%= link_to 'All Comments (temp)', comments_path %>
 
 <table>
   <tr>
@@ -8,7 +7,7 @@
   </tr>
   <% @articles.each do |article| %>
     <tr>
-      <td><%= link_to article.title, article.url  %>, <%= article.created_at.asctime%>, <%= link_to "Add Comment", new_comment_path%></td>
+      <td><%= link_to article.title, article.url  %>, <%= article.created_at.asctime%>, <%= link_to "Discuss", article %></td>
     </tr>
   <% end %>
 </table>

@@ -13,9 +13,6 @@
   <% end %>
 <% end %>
 
-<% flash.each do |key, message| %>
-  <%= content_tag :div, message, class: key %>
-<% end %>
 <%= yield %>
 
 <% if user_signed_in? %>
