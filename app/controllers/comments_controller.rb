@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def index
-    @articles = Article.all.order(:title).order(:created_at)
-    @comments = Comment.all.order(:article_id).order(:created_at)
+    @articles = Article.all.order(:title).order(created_at: :desc)
+    @comments = Comment.all.order(:article_id).order(created_at: :desc)
 
   end
   def new
