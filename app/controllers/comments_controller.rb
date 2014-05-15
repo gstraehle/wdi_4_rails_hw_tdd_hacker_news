@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   def index
-    @comments = Comment.all
+    @articles = Article.all.order(:title).order(:created_at)
+    @comments = Comment.all.order(:article_id).order(:created_at)
+
   end
   def new
     @comment = Comment.new
