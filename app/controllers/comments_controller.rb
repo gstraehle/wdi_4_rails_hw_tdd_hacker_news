@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 
   def create
     @article = Article.find(params[:article_id])
-    @comment = @article.comments.new(comment_params)
+    @comment = @article.comments.new(message: comment_params[:message], user: current_user)
 
     if @comment.save
       flash[:notice] = 'Comment successfully created!'
