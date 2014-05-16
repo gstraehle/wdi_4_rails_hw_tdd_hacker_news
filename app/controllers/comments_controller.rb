@@ -8,8 +8,8 @@ class CommentsController < ApplicationController
       flash[:notice] = 'Comment successfully created!'
       redirect_to @article
     else
-      flash.now[:alert] = @comment.errors.full_messages.join(', ')
-      render :new
+      flash[:notice] = @comment.errors.full_messages.join(', ')
+      redirect_to @article
     end
   end
 

@@ -2,11 +2,14 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   def index
     @articles = Article.all.order(created_at: :desc)
+    @users = User.all
+    @comments = Comment.all
   end
 
   def show
     @article = Article.find(params[:id])
-
+    @comment = @article.comments.order(created_at: :desc).new
+    @users = User.all
   end
 
   def new
